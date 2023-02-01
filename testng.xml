@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suites" parallel="tests" thread-count="3"  data-provider-thread-count="2">
+	
+	<parameter name="SL4J" value="log4j.properties" />
+	
+	<parameter name="CONFIG" value="configProperty/test.properties" />
+
+	<test verbose="2" name="Test With chrome">
+
+		<parameter name="BROWSER" value="chrome" />
+
+		<classes>
+			<class name="com.testvagrant.runner.CucumberRunner" />
+			<class name="com.testvagrant.runner.FailedRunner" />
+		</classes>
+
+	</test>
+
+</suite> <!-- Default suite -->
